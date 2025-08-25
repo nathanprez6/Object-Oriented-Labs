@@ -3,6 +3,7 @@
 # Description: Generates a random value between 1 and 100,
 # then prompts the user to guess it.
 
+import check_input
 import random
 
 def main():
@@ -23,26 +24,18 @@ def main():
     print("- Guessing Game –")
 
     random_value = random.randint(1, 100)
-
-    guess_value = int(input("I'm thinking of a number. Make a guess (1-100): "))
+   
+    guess_value =  check_input.get_int_range("I'm thinking of a number. Make a guess (1-100): ", 1, 100)
     guess_count = 1
 
     while guess_value != random_value:
-        try:
-            if guess_value < random_value and guess_value >= 1:
-                guess_value = int(input("Too low! Guess again: "))
-                guess_count += 1
-            elif guess_value > random_value and guess_value <= 100:
-                guess_value = int(input("Too high! Guess again: "))
-                guess_count += 1
-            else:
-                print("Invalid input – should be within range 1-100.")
-                guess_value = int(input("Guess again (1-100): "))
-        except ValueError:
-            print("Invalid input – should be an integer.")
-            guess_value = int(input("Guess again (1-100): "))
-
-    # guess_count += 1
+        if guess_value < random_value and guess_value >= 1:
+            guess_value = check_input.get_int_range("Too low! Guess again: ", 1, 100)
+            guess_count += 1
+        else: #guess_value > random_value and guess_value <= 100:
+            guess_value = check_input.get_int_range("Too high! Guess again: ", 1, 100)
+            guess_count += 1
+    
     print("Correct! You got it in", guess_count,  "tries.")
 
 main()
