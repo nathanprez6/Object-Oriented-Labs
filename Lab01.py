@@ -20,26 +20,26 @@ def main():
     
     print("- Guessing Game –")
 
-    randomValue = random.randint(1, 100)
+    random_value = random.randint(1, 100)
 
-    guessValue = int(input("I'm thinking of a number. Make a guess (1-100): "))
+    guess_value = int(input("I'm thinking of a number. Make a guess (1-100): "))
 
-    guessCount = 1
+    guess_count = 1
 
-    while guessValue != randomValue:
-        if guessValue < randomValue:
-            guessValue = int(input("Too low! Guess again: "))
-            guessCount += 1
-        elif guessValue > randomValue:
-            guessValue = int(input("Too high! Guess again: "))
-            guessCount += 1
-        elif guessValue < 1 or guessValue > 100:
+    while guess_value != random_value:
+        if guess_value < random_value:
+            guess_value = int(input("Too low! Guess again: "))
+            guess_count += 1
+        elif guess_value > random_value:
+            guessValguess_valueue = int(input("Too high! Guess again: "))
+            guess_count += 1
+        elif guess_value < 1 or guess_value > 100:
             print("Invalid input – should be within range 1-100.")
-            guessValue = int(input("Guess again (1-100): "))
+            guess_value = int(input("Guess again (1-100): "))
         else:
             print("Invalid input – should be an integer.")
-            guessValue = int(input("Guess again (1-100): "))
+            guess_value = int(input("Guess again (1-100): "))
 
-    print("Correct! You got it in", guessCount,  "tries.")
+    print("Correct! You got it in", guess_count,  "tries.")
 
 main()
