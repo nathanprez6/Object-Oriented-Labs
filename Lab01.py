@@ -29,12 +29,14 @@ def main():
     guess_count = 1
 
     while guess_value != random_value:
-        if guess_value < random_value and guess_value >= 1:
+        if guess_value < random_value:
             guess_value = check_input.get_int_range("Too low! Guess again: ", 1, 100)
             guess_count += 1
-        else: #guess_value > random_value and guess_value <= 100:
+        elif guess_value > random_value:
             guess_value = check_input.get_int_range("Too high! Guess again: ", 1, 100)
             guess_count += 1
+        else:
+            guess_value = check_input.get_int_range("Guess again (1-100): ", 1, 100)
     
     print("Correct! You got it in", guess_count,  "tries.")
 
