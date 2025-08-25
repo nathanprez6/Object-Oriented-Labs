@@ -42,6 +42,7 @@ def main():
             print("Invalid input – should be an integer.")
             guess_value = int(input("Guess again (1-100): "))
 
+    # guess_count += 1
     print("Correct! You got it in", guess_count,  "tries.")
 
 main()
