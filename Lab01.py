@@ -7,7 +7,6 @@ import check_input
 import random
 
 def main():
-
     print("- Guessing Game -")
 
     random_value = random.randint(1, 100)
