@@ -76,6 +76,7 @@ def main():
     total_money = 100
     play_again = True
 
+    # Loops until user quits or runs out of money
     while(play_again):
         queen_loc = random.randint(1, 3)
 
