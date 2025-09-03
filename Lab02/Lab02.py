@@ -1,25 +1,38 @@
 # Authors: Nathan Nguyen, Maximus Cirson
 # Date: Sept. 3, 2025
-# Description: 
+# Description: A program that allows the user to play the game Three Card Monte.
+# The player places a bet and then guesses the location of the queen in a set of three cards.
 
 import check_input
 import random
 
 def get_users_bet(money):
     """ 
-    Display the total amount of money to the user, then prompts the user to 
+    Displays the total amount of money to the user, then prompts the user to 
     enter their bet. Checks that the bet amount is valid and returns it.
 
     Args:
-        money (int): the user's total money remaining
+        money (int): The user's total money remaining
 
-    Returns: the amount the user wants to bet.
+    Returns: 
+        The amount the user wants to bet.
     """
     print("You have $" + str(money) + ".")
     bet_amount = check_input.get_int_range("How much you wanna bet? ", 1, money)
     return bet_amount
 
 def get_users_choice():
+    """ 
+    Displays three cards face down with numbers 1, 2, and 3.
+    Prompt the user to choose a card. Check that the user’s choice is a number
+    between 1-3 and return that value
+
+    Args:
+        None
+    
+    Returns: 
+        The user's guess of the queen's location
+    """
     print("+-----+ +-----+ +-----+")
     print("|     | |     | |     |")
     print("|  1  | |  2  | |  3  |")
@@ -30,6 +43,15 @@ def get_users_choice():
     return queen_guess
 
 def display_queen_loc(queen_loc):
+    """ 
+    Displays three cards face up to show the location of the queen
+
+    Args:
+        queen_loc (int): The location of the queen
+    
+    Returns: 
+        None
+    """
     if(queen_loc == 1):
         print("+-----+ +-----+ +-----+")
         print("|     | |     | |     |")
