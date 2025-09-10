@@ -60,6 +60,7 @@ def get_letters_remaining(incorrect, correct):
     remaining_letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 
                          'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     
+    # Removes letter from remaining alphabet is it has already been guessed
     for item in incorrect:
         if item in remaining_letters:
             remaining_letters.remove(item)
