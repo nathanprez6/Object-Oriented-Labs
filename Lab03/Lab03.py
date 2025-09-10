@@ -1,4 +1,4 @@
-# Authors: Nathan Nguyen, 
+# Authors: Nathan Nguyen, Brian Gutierrez
 # Date: Sept. 8, 2025
 # Description: A program that replicates the game hangman with 5-letter words
 
@@ -74,14 +74,17 @@ def main():
     while(play_again):
         print("-Hangman-\n")
 
+        # Randomly chooses word from dictionary
         random_word = words[random.randint(0, len(words))]
 
+        # Incorrect and Correct guesses list and count initialization
         incorrect_guesses = []
         correct_guesses = ['_', '_', '_', '_', '_']
 
         correct_guesses_made = 0
         incorrect_guesses_made = 0
 
+        # Loops until user runs out of tries or guesses the word
         while('_' in correct_guesses and incorrect_guesses_made < 6):
             display_gallows(incorrect_guesses_made)
             display_letters(correct_guesses)
@@ -90,6 +93,7 @@ def main():
             display_letters(get_letters_remaining(incorrect_guesses, correct_guesses))
 
             valid = False
+            # Checks if user's guess is a single letter that has not been guess yet
             user_guess = input("Enter a letter: ").upper()
             if (user_guess.isalpha() and len(user_guess) == 1):
                 if (user_guess in incorrect_guesses or user_guess in correct_guesses):
@@ -99,16 +103,19 @@ def main():
             else:
                 print("That is not a letter.")
 
+            # if user's guess is valid, check if it is in the word and place in 
+            # correct location and increment correct guesses count. Otherwise, append
+            # to incorrect guesses list and increment the corresponding count.
             if valid:
                 if user_guess in random_word:
                     print("Correct!\n")
                     correct_guesses_made += 1
                     find_start = 0
-                    letter_index = random_word.find(user_guess, 0, 5)
+                    letter_index = random_word.find(user_guess, 0)
                     while (find_start < len(random_word) and letter_index >= 0):
                         find_start = letter_index + 1
                         correct_guesses[letter_index] = user_guess
-                        letter_index = random_word.find(user_guess, find_start, 5)
+                        letter_index = random_word.find(user_guess, find_start)
                 else:
                     print("Incorrect!\n")
                     incorrect_guesses_made += 1
@@ -119,16 +126,17 @@ def main():
             display_letters(incorrect_guesses)
 
         display_gallows(incorrect_guesses_made)
-        # display_letters(correct_guesses) if display correct guesses
-        #if display correct answer
+
+        # Prints the correct word
         for char in random_word:
-            print(char.upper(), end='')
+            print(char.upper(), "", end='')
         print("\n")
         if (random_word == "".join(correct_guesses)):
             print("You win!")
         else:
             print("You lose!")
 
+        # Prompts user to play again
         play_again = check_input.get_yes_no("Play again (Y/N)? ")
 
 main()
