@@ -87,6 +87,10 @@ def main():
 
         # Loops until user runs out of tries or guesses the word
         while('_' in correct_guesses and incorrect_guesses_made < 6):
+            print("Incorrect selections: ", end='')
+            incorrect_guesses.sort()
+            display_letters(incorrect_guesses)
+            
             display_gallows(incorrect_guesses_made)
             display_letters(correct_guesses)
 
@@ -121,10 +125,6 @@ def main():
                     print("Incorrect!\n")
                     incorrect_guesses_made += 1
                     incorrect_guesses.append(user_guess)
-                
-            print("Incorrect selections: ", end='')
-            incorrect_guesses.sort()
-            display_letters(incorrect_guesses)
 
         display_gallows(incorrect_guesses_made)
 
