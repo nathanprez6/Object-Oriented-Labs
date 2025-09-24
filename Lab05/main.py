@@ -4,7 +4,7 @@
 # made up of contact objects.
 
 import check_input
-from contact import Contact
+import contact
 
 def read_file():
     contacts = []
@@ -13,7 +13,7 @@ def read_file():
             parts = line.strip().split(",")
             if len(parts) == 6:
                 fn, ln, ph, addr, city, zip_code = parts
-                contacts.append(Contact(fn, ln, ph, addr, city, zip_code))
+                contacts.append(contact.Contact(fn, ln, ph, addr, city, zip_code))
     contacts.sort()
     return contacts
 
@@ -72,6 +72,8 @@ def main():
     menu_choice = 0
 
     while menu_choice != 5:
+        menu_choice = get_menu_choice()
+
         if menu_choice == 1:
             # Display contacts
             print("Number of contacts: " + len(contacts))
@@ -86,7 +88,7 @@ def main():
             addr = input("Address: ")
             city = input("City: ")
             zip = input("Zip: ")
-            contacts.append(Contact(fn, ln, ph, addr, city, zip))
+            contacts.append(contact.Contact(fn, ln, ph, addr, city, zip))
             contacts.sort()
         elif menu_choice == 3:
             # Search contacts
@@ -117,5 +119,6 @@ def main():
             write_file(contacts)
 
     print("Ending Program")
+
 
 main()
