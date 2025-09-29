@@ -59,8 +59,8 @@ def get_menu_choice():
 
 def modify_contact(cont):
     """ 
-    Displays the modify menu to the user, gets the user’s valid input, then, based on the user’s choice, 
-    prompts the user for the information they’d like to change, and then updates the appropriate attribute
+    Displays the modify menu to the user, gets the users valid input, then, based on the users choice, 
+    prompts the user for the information they'd like to change, and then updates the appropriate attribute
     for the contact.
 
     Args:
