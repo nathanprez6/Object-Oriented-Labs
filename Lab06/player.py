@@ -1,21 +1,21 @@
 # Authors: Nathan Nguyen, Tony Gianformaggio
 # Date: Sept. 29, 2025
 
-from die import Die
+import die
 
 class Player:
     def __init__(self):
-        self._dice = [Die(6), Die(6), Die(6)]
+        self._dice = [die.Die(6), die.Die(6), die.Die(6)]
         self._points = 0
 
     def points(self):
         return self._points
     
     def roll_dice(self):
-        self._dice[0] = self._dice[0].roll()
-        self._dice[1] = self._dice[1].roll()
-        self._dice[2] = self._dice[2].roll()
-        self._dice.sort()
+        self._dice[0].roll()
+        self._dice[1].roll()
+        self._dice[2].roll()
+        self._dice.sort(reverse=True)
 
     def has_pair(self):
         if(self._dice[0] == self._dice[1] or
@@ -40,5 +40,4 @@ class Player:
         return False
     
     def __str__(self):
-        return (f"D1=", str(self._dice[0]), "D2=", str(self._dice[1]),
-                 "D3=", str(self._dice[2]))
+        return (f"D1={self._dice[0]}, D2={self._dice[1]}, D3={self._dice[2]}")
