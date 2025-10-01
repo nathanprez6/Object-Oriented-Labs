@@ -15,6 +15,7 @@ class Player:
             None
         """ 
         self._dice = [die.Die(6), die.Die(6), die.Die(6)]
+        self._dice.sort()
         self._points = 0
 
     @property
@@ -43,7 +44,7 @@ class Player:
         self._dice[0].roll()
         self._dice[1].roll()
         self._dice[2].roll()
-        self._dice.sort(reverse=True)
+        self._dice.sort()
 
     def has_pair(self):
         """ 

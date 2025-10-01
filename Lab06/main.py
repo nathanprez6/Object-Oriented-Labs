@@ -17,7 +17,7 @@ def take_turn(player_obj):
             None
         """ 
     player_obj.roll_dice()
-    print(str(player_obj))
+    print(player_obj)
     if(player.Player.has_three_of_a_kind(player_obj)):
         print("You got 3 of a kind!")
     elif(player.Player.has_pair(player_obj)):

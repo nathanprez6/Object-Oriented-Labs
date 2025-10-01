@@ -16,7 +16,6 @@ class Die:
         """ 
         self._sides = sides
         self._value = 0
-        self._value = self.roll()
 
     def roll(self):
         """ 
@@ -53,7 +52,7 @@ class Die:
         Returns: 
             True if the value of self is less than the value of other
         """ 
-        return (self._value > other._value)
+        return (self._value < other._value)
     
     def __eq__(self, other):
         """ 
