@@ -4,7 +4,7 @@
 # and fight monsters that they encounter as they explore. The user wins if they reach 
 # the dungeon’s exit alive. 
 
-import check_input
+import Lab14.check_input as check_input
 import random
 from hero import Hero
 from enemy import Enemy

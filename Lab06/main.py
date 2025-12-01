@@ -2,7 +2,7 @@
 # Date: Sept. 29, 2025
 # Description: A dice game that awards the user points for a pair, three-of-a-kind, or a series
 
-import check_input
+import Lab14.check_input as check_input
 import player
 
 def take_turn(player_obj):

@@ -2,7 +2,7 @@
 # Date: Sept. 15, 2025
 # Description: A program that allows the user to solve a maze that is read in from a file
 
-import check_input
+import Lab14.check_input as check_input
 
 def read_maze():
     """ 

@@ -6,7 +6,7 @@ from hero import Hero
 from dragon import Dragon
 from fire import FireDragon
 from flying import FlyingDragon
-import check_input
+import Lab14.check_input as check_input
 import random
 
 def main():

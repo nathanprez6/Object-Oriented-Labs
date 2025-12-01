@@ -3,7 +3,7 @@
 # Description:  A program that allows the user to view, search, and modify a contact list
 # made up of contact objects.
 
-import check_input
+import Lab14.check_input as check_input
 from contact import Contact
 
 def read_file():

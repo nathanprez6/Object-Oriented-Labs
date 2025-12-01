@@ -2,7 +2,7 @@
 # Date: Nov. 3, 2025
 # Description: A game where the user must defeat three monsters to pass the trials.
 
-from check_input import get_int_range
+from Lab14.check_input import get_int_range
 from hero import Hero
 from beg_factory import BeginnerFactory
 from exp_factory import ExpertFactory

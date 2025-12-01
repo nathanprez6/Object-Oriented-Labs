@@ -2,7 +2,7 @@
 # Date: Sept. 8, 2025
 # Description: A program that replicates the game hangman with 5-letter words
 
-import check_input
+import Lab14.check_input as check_input
 import random
 from dictionary import words
 

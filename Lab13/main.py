@@ -6,7 +6,7 @@
 # store the updated list by overwriting the old contents when the user quits the program.
 
 from tasklist import Tasklist
-from check_input import get_int_range
+from Lab14.check_input import get_int_range
 
 def main_menu():
     '''Displays the main menu and returns the user's valid input'''

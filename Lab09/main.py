@@ -4,7 +4,7 @@
 # having the user open a series of three doors random chosen 
 # from several different types of doors
 
-import check_input
+import Lab14.check_input as check_input
 import random
 from basic_door import BasicDoor
 from combo_door import ComboDoor

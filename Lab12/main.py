@@ -11,7 +11,7 @@ import turkey
 import potatoes
 import pie
 import green_beans
-import check_input
+import Lab14.check_input as check_input
 
 def examine_plate(p):
     '''Examines the plate to see if it can hold the food added.

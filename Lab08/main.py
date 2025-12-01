@@ -3,7 +3,7 @@
 # description: A game where the user must choose a vehicle, either a Car,
 # Motorcycle, or Truck and then race against the remaining choices
 
-import check_input
+import Lab14.check_input as check_input
 import random
 from car import Car
 from motorcycle import Motorcycle

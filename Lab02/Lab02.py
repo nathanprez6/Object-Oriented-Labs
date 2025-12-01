@@ -3,7 +3,7 @@
 # Description: A program that allows the user to play the game Three Card Monte.
 # The player places a bet and then guesses the location of the queen in a set of three cards.
 
-import check_input
+import Lab14.check_input as check_input
 import random
 
 def get_users_bet(money):

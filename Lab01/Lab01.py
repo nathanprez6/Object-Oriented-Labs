@@ -3,7 +3,7 @@
 # Description: Generates a random value between 1 and 100,
 # then prompts the user to guess it.
 
-import check_input
+import Lab14.check_input as check_input
 import random
 
 def main():
