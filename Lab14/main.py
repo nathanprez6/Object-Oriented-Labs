@@ -13,14 +13,18 @@ def main():
     pup = Puppy()
 
     user_choice = 0
+    # Loops until user quits
     while user_choice != 3:
         print("What would you like to do?")
         print("1. Feed the puppy\n2. Play with the puppy\n3. Quit")
         user_choice = get_int_range("Enter choice: ", 1, 3)
+        print()
 
+        # Display the puppy’s reaction to the user’s choice
         if user_choice == 1:
             print(pup.give_food())
         elif user_choice == 2:
             print(pup.throw_ball())
 
-main()
+if __name__ == "__main__":
+    main()
